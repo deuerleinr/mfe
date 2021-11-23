@@ -8,11 +8,12 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthas].js",
+    publicPath: "/marketing/latest/",
   },
   plugins: [
     new ModuleFederationPlugin({
       name: "marketing",
-      filename: 'remoteEntry.js',
+      filename: "remoteEntry.js",
       exposes: {
         "./MarketingApp": "./src/bootstrap",
       },
